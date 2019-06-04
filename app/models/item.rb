@@ -6,4 +6,12 @@ class Item < ApplicationRecord
   def name_with_id
     "#{item_name}-#{item_id}"
   end
+
+  def self.search(search)
+    if search
+       where(['item_name LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
 end

@@ -13,4 +13,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require jquery-ui
+//= require datetime_picker_input 
 //= require_tree .
+
+

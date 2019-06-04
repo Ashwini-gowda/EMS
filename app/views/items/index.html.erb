@@ -1,7 +1,27 @@
-<div clas="container">
-<h3>Items</h3>
-  <%= link_to 'New Item', new_item_path, class: "btn btn-info btn-sm" %>
+<h3 style="text-align:center">Items</h3>
+<div class="container">
+  <nav class=" navbar-expand-sm ", height="100px">
+    <button class="collapse navbar-toggler navbar-toggler-right" type="button" data-toggle=" collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"    aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"><%= link_to 'New Item', new_item_path, class: "nav-link" %></li>
+      <li class="nav-item active"><%= link_to 'Back to Employees list', employees_path, class: "nav-link" %></li>
+      <li class="nav-item active"><%= link_to 'Link to Previous holders list', previousholders_path, class: "nav-link" %></li>
+    </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <i class="pe-7s-search" aria-hidden="true"></i>
+        <%= form_tag items_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: 'enter search element', aria_label: "Search" %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+        </form>
+    </div>
+  </nav>
 </div>
+
+
 <br/>
 <div class="container">
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -38,3 +58,15 @@
   </table>
 </div>
 </div>
+
+<script>
+// Initialize tooltip component
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// Initialize popover component
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>

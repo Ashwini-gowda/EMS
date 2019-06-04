@@ -1,36 +1,52 @@
 <div class="container">
-  <h1>Employees Details</h1>
-  <%= link_to 'New Employee', new_employee_path, class: "btn btn-info btn-sm" %>
+  <h1 style="text-align:center">Employees Details</h1>
+  <nav class=" navbar-expand-sm ", height="100px">
+    <button class="collapse navbar-toggler navbar-toggler-right" type="button" data-toggle=" collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li><%= link_to 'New Employee', new_employee_path, class: "btn btn-sm" %></li>
+        <li><%= link_to 'Link to items list', items_path, class: "btn btn-sm"%></li>
+      </ul>
+      <form class="form-inline">
+       
+        <%= form_tag employees_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: 'enter search element', aria_label: "Search" %>
+          <%= submit_tag "Search", :name => nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+        <% end %>
+      </form>
+    </div>
+  </nav>
 </div>
-<br/>
 <div class="container">
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
- <table class="table table-bordered table-hover mb-0" >
-    <thead >
-      <tr>
-      <th scope="col">Eid</th>
-        <th scope="col">Name</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Joining_date</th>
-        <th scope="col">Phone_number</th>
-        <th scope="col" colspan="3"> Modification</th>
-      </tr>
-    </thead>
-  
-    <tbody >
-      <% @employees.each do |employee| %>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-hover mb-0" >
+      <thead>
         <tr>
-          <td><%= employee.eid %></td>
-          <td><%= employee.name %></td>
-          <td><%= employee.gender %></td>
-          <td><%= employee.joining_date %></td>
-          <td><%= employee.phone_number %></td>
-          <td><%= link_to 'Show', employee, class: "btn btn-info btn-sm" %></td>
-          <td><%= link_to 'Edit', edit_employee_path(employee), class: "btn btn-success btn-sm" %></td>
-          <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-</div>
+          <th scope="col">Eid</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Joining_date</th>
+            <th scope="col">Phone_number</th>
+            <th scope="col" colspan="3"> Modification</th>
+          </tr>
+        </thead>
+
+        <tbody >
+          <% @employees.each do |employee| %>
+            <tr>
+              <td><%= employee.eid %></td>
+              <td><%= employee.name %></td>
+              <td><%= employee.gender %></td>
+              <td><%= employee.joining_date %></td>
+              <td><%= employee.phone_number %></td>
+              <td><%= link_to 'Show', employee, class: "btn btn-info btn-sm" %></td>
+              <td><%= link_to 'Edit', edit_employee_path(employee), class: "btn btn-success btn-sm" %></td>
+              <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

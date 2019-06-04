@@ -6,7 +6,8 @@ ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -37,12 +38,15 @@ gem 'kaminari-bootstrap'
 gem 'carrierwave' 
 
 gem 'simple_form'  
-
-gem 'jquery-rails'  
+  
 gem 'ckeditor', '~> 4.1'
 gem 'will_paginate-bootstrap'
 
 gem 'bootstrap'
+gem 'devise'
+gem 'jquery-ui-rails'
+gem 'jquery-rails'
+gem 'datetime_picker_input'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

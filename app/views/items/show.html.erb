@@ -10,21 +10,31 @@
   <strong>Item purchase date:</strong>
   <%= @item.item_purchase_date %><br>
 </div>
-<hr>
-  <div>
-    <% @item.previousholders.each do |previousholder| %> 
-      <strong>Previous Holder Name</strong>
-      <%= previousholder.employee.name %><br>
-      <strong>Remark of the item</strong>
-      <%= previousholder.remark %><br>
-      <strong>From Date </strong>
-      <%= previousholder.from_date %><br>
-      <strong>To date</strong>
-      <%= previousholder.to_date%><br>
-    <% end %>
-  </div>
-</hr>
-<hr>
-  <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-success btn-sm" %>
-  <%= link_to 'List Items', items_path, class: "btn btn-primary btn-sm" %>
-</hr>
+<hr/>
+<div class="container">
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table table-bordered table-hover mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Previous Holder Name</th>
+          <th scope="col">Remark of the item</th>
+          <th scope="col">From Date </th>
+          <th scope="col">To date</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @item.previousholders.each do |previousholder| %> 
+        <tr>
+          <td><%= previousholder.employee.name %></td>
+          <td><%= previousholder.remark %></td>      
+          <td><%= previousholder.from_date %></td>      
+          <td><%= previousholder.to_date%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <hr/>
+  <%= link_to 'Edit', edit_item_path(@item), class: "btn btn-success   btn-sm" %>
+  <%= link_to 'List Items', items_path, class: "btn btn-success btn-sm" %>
+</div>
+</div>

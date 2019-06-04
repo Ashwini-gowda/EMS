@@ -5,4 +5,13 @@ class Employee < ApplicationRecord
   def name_with_eid
     "#{name}-#{eid}"
   end
+
+
+  def self.search(search)
+    if search
+       where(['name LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
 end

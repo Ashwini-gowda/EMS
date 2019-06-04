@@ -1,17 +1,24 @@
 <div class="controller">
   <%= simple_form_for @item do |f| %>
-  <div class="form-inputs justify-content-center col-sm-10">
-    <%= f.input :item_id %><br/>
-    <%= f.input :item_name %><br/>
-    <%= f.input :item_brand %><br/>
-    <%= f.input :item_model_number %><br/>
-    <%= f.input :item_purchase_date %><br/>
-    <%= f.input :present_holder_id %><br/>
-    <%= f.input :previous_holder_id %><br/>
+  <div class="form-inputs justify-content-center col-lg-10">
+    <%= f.input :item_id %>
+    <%= f.input :item_name %>
+    <%= f.input :item_brand %>
+    <%= f.input :item_model_number %>
+    <%= f.input :item_purchase_date, as: :string, 
+        input_html: {value: Date.new.strftime("%Y%m%d"), class: 'datepicker'} %>
+    <%= f.input :present_holder_id %>
+    <%= f.input :previous_holder_id %>
   </div>
-  <br/>
       <div>
         <%= f.button :submit, class: "btn btn-primary btn-sm" %>
       </div>
   <% end %>
+  <br/>
 </div>
+
+<script type="text/javascript">  
+   $(document).ready(function(){
+    $('.datepicker').datepicker();
+      });
+</script>

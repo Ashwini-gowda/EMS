@@ -2,7 +2,13 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   def index
-    @employees = Employee.all
+    #@employees = Employee.all
+     #@employees = Employee.search(params[:search], params[:id])
+    if params[:search]
+      @employees = Employee.search(params[:search]).order("created_at DESC")
+    else
+      @employees = Employee.all.order('created_at DESC')
+    end
   end
 
   def show

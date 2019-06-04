@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pickers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Joining date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pickers.each do |picker| %>
+      <tr>
+        <td><%= picker.joining_date %></td>
+        <td><%= link_to 'Show', picker %></td>
+        <td><%= link_to 'Edit', edit_picker_path(picker) %></td>
+        <td><%= link_to 'Destroy', picker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picker', new_picker_path %>

@@ -5,10 +5,9 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :gender
       t.date :joining_date
-      t.integer :phone_number
+      t.bigint :phone_number, :limit => 10
 
       t.timestamps
     end
-    add_index :employees, [:name, :endid]
   end
 end
