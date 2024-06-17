@@ -1,8 +1,8 @@
-# Lowcoder overview
+# New Docs overview
 
-## What is Lowcoder?
+## What is New Docs?
 
-Lowcoder is a developer-friendly open-source low code platform to build internal apps within minutes.
+New Docs is a developer-friendly open-source low code platform to build internal apps within minutes.
 
 Traditionally, building an internal app requires complex frontend and backend interactions with hundreds and thousands lines of code, not to mention work on packaging, integration and deployment. Lowcoder significantly reduces the work you need to do to build an app.
 

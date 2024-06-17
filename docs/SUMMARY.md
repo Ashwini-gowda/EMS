@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Lowcoder overview](README.md)
+* [New Docs overview](README.md)
 * [Self-hosting](self-hosting/README.md)
   * [Enterprise Edition](self-hosting/enterprise-edition.md)
   * [Access local database or API](self-hosting/access-local-database-or-api.md)
